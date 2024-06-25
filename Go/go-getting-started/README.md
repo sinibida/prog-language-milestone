@@ -1,0 +1,86 @@
+[Reference: Go by Example](https://gobyexample.com/)
+
+- [x] Hello World
+- [x] Values
+- [x] Variables
+- [x] Constants
+    - No Type?
+- [x] For
+- [x] If/Else
+- [ ] Switch
+- [ ] Arrays
+- [ ] Slices
+- [ ] Maps (10)
+- [ ] Range
+- [ ] Functions
+- [ ] Multiple Return Values
+- [ ] Variadic Functions
+- [ ] Closures
+- [ ] Recursion
+- [ ] Pointers
+- [ ] Strings and Runes
+- [ ] Structs
+- [ ] Methods (20)
+- [ ] Interfaces
+- [ ] Enums
+- [ ] Struct Embedding
+- [ ] Generics
+- [ ] Errors
+- [ ] Custom Errors
+- [ ] Goroutines
+- [ ] Channels
+- [ ] Channel Buffering
+- [ ] Channel Synchronization (30)
+- [ ] Channel Directions
+- [ ] Select
+- [ ] Timeouts
+- [ ] Non-Blocking Channel Operations
+- [ ] Closing Channels
+- [ ] Range over Channels
+- [ ] Timers
+- [ ] Tickers
+- [ ] Worker Pools
+- [ ] WaitGroups (40)
+- [ ] Rate Limiting
+- [ ] Atomic Counters
+- [ ] Mutexes
+- [ ] Stateful Goroutines
+- [ ] Sorting
+- [ ] Sorting by Functions
+- [ ] Panic
+- [ ] Defer
+- [ ] Recover
+- [ ] String Functions (50)
+- [ ] String Formatting
+- [ ] Text Templates
+- [ ] Regular Expressions
+- [ ] JSON
+- [ ] XML
+- [ ] Time
+- [ ] Epoch
+- [ ] Time Formatting / Parsing
+- [ ] Random Numbers
+- [ ] Number Parsing (60)
+- [ ] URL Parsing
+- [ ] SHA256 Hashes
+- [ ] Base64 Encoding
+- [ ] Reading Files
+- [ ] Writing Files
+- [ ] Line Filters
+- [ ] File Paths
+- [ ] Directories
+- [ ] Temporary Files and Directories
+- [ ] Embed Directive (70)
+- [ ] Testing and Benchmarking
+- [ ] Command-Line Arguments
+- [ ] Command-Line Flags
+- [ ] Command-Line Subcommands
+- [ ] Environment Variables
+- [ ] Logging
+- [ ] HTTP Client
+- [ ] HTTP Server
+- [ ] Context
+- [ ] Spawning Processes (80)
+- [ ] Exec'ing Processes
+- [ ] Signals
+- [ ] Exit
