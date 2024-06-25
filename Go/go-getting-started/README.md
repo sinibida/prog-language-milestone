@@ -7,12 +7,12 @@
     - No Type?
 - [x] For
 - [x] If/Else
-- [ ] Switch
-- [ ] Arrays
-- [ ] Slices
+- [x] Switch
+- [x] Arrays
+- [x] Slices
 - [ ] Maps (10)
 - [ ] Range
-- [ ] Functions
+- [ ] Functions **<-- DO!**
 - [ ] Multiple Return Values
 - [ ] Variadic Functions
 - [ ] Closures
