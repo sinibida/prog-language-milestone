@@ -123,12 +123,12 @@ func decrypt() {
 func main() {
 	fmt.Println("modPower(2, 10, 300) =", modPower(2, 10, 300))
 
-	fmap := map[int]func(){
-		1: setN,
-		2: getDE,
-		3: encrypt,
-		4: decrypt,
-	}
+	// fmap := map[int]func(){
+	// 	1: setN,
+	// 	2: getDE,
+	// 	3: encrypt,
+	// 	4: decrypt,
+	// }
 
 	var option int
 	for {
@@ -138,6 +138,17 @@ func main() {
 		fmt.Println("3. Encrpyt\t4. Decrypt")
 		fmt.Println("====================================")
 		fmt.Scanf("%d\n", &option)
-		fmap[option]();
+
+		switch option {
+		case 1: 
+			setN()
+		case 2: 
+			getDE()
+		case 3: 
+			encrypt()
+		case 4: 
+			decrypt()
+		}
+		// fmap[option]();
 	}
 }
