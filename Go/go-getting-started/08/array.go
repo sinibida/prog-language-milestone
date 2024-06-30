@@ -62,4 +62,13 @@ func main() {
 	s[1] = "b"
 	s[2] = "c"
 	fmt.Println("s:\t", s)
+
+	fmt.Println("---")
+
+	ss := make([]string, len(s))
+	copy(ss, s) // argumnents passed like strcpy
+	s = append(s, "d") // s not 'mutated'
+
+	fmt.Println("s:\t", s)
+	fmt.Println("ss:\t", ss)
 }
