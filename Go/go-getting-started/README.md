@@ -12,7 +12,7 @@
 - [x] Slices
 - [ ] Maps (10)
 - [ ] Range
-- [ ] Functions **<-- DO!**
+- [ ] Functions
 - [ ] Multiple Return Values
 - [ ] Variadic Functions
 - [ ] Closures
