@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  body
+    style.
+      #some-id {
+        background: red
+      }
+      .div-error {
+        background: pink
+      }
+      .div-success {
+        background: green
+      }
+    p#result Hello World
+    .sample-div#some-id
+      p Awesome Pug!
+    button#my-button(type='submit') Submit Button
+    p 
+      | Reprehenderit est laborum laborum laborum culpa commodo exercitation ut.
+      | Velit enim elit quis nostrud in ex occaecat quis.
+      | Laboris do nostrud sint ullamco non consectetur officia non deserunt fugiat exercitation.
+      | Laboris elit duis qui elit incididunt consectetur consequat sit.
+      br
+      | cool!
+    h1= amogus
+    p This site is about #{amogus}
+    p This site is about #{amogus + amogus + amogus} <!--주석-->
+    div(class=amogus + "lol" id="hi-div")
+      | Hi
+    - const notSus = "Not " + amogus
+    p #{notSus}
+    p <strong>BOLD?(!!)</strong>
+    p= "<strong>NOT BOLD</strong>"
+    p!= "<strong>BOLD!!</strong>"
+    ol
+      each lang, i in langArr
+        li
+          | #{lang}, 나의 제 #{i}순위 프로그래밍 언어!
+    div(class='div-' + data.type)
+      case data.type
+        when 'error'
+          p 에러 발생!!!
+        when 'success'
+          p 성공적!!!
+        default
+          p ???
+      if data.message.length > 30
+        p TLDR...
+      else
+        p= data.message
+    script.
+      const result = document.querySelector("#result")
+      const myButton = document.querySelector("#my-button")
+      let i = 0;
+
+      myButton.addEventListener('click', () => {
+        i++;
+        result.innerHTML = i.toString();
+      })
