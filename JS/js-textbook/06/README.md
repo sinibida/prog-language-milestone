@@ -39,6 +39,8 @@ module.exports = ([^;]+);
 export default $1;
 ```
 
+(bin/www)
+
 - **debug**
   - 콘솔 로그 남기는 모듈
 - **app(express)**
