@@ -146,4 +146,56 @@ module.exports = (/** @type Sequelize */ sequelize) => {
 
 ```
 
+## 실전
+
+(일단 관계 설정 전에  구현부터 해보기)
+(see: [#](#관계-설정))
+
+- html tag: **fieldset ... legend**
+
+![fieldset & legend tag](image.png)
+
+XMLHttpRequest =>
+
+```js
+const userDeleteButtons = document.querySelectorAll(
+  ".user-table__delete-button"
+);
+userDeleteButtons.forEach((button) => {
+  const { userId } = button.dataset;
+  button.addEventListener("click", () => {
+    const xhr = new XMLHttpRequest(); // 생성
+    xhr.onerror(() => {               // 에러 대응 **SEE 오답 노트**
+      console.error(xhr.responseText);
+    });
+    xhr.open("delete", `/users/${userId}`); // 실행!
+  });
+});
+```
+
+### ^^^ 오답 노트
+
+onload 잘못 설정함
+
+```js
+xhr.onerror = () => {
+  console.error(xhr.responseText);
+};
+```
+
+send를 깜빡함
+
+```js
+xhr.open("delete", `/users/${userId}`);
+xhr.send() // !!!
+```
+
+## 관계 설정
+
 **DO: 7.6.3**
+
+
+# see also:
+
+- [TypeORM](https://typeorm.io/)
+- [Should I use ORM? (Reddit)](https://www.reddit.com/r/learnprogramming/comments/vbnu8k/should_i_use_an_orm/)

@@ -1,0 +1,18 @@
+include layout 
+
+block content
+  h1= user.name
+  table
+    tr
+      td 
+        strong 나이
+      td= user.age
+    tr
+      td 
+        strong 결혼 여부
+      td= user.married ? "O" : "X"
+    tr
+      td
+        strong 설명
+      td= user.comment
+      

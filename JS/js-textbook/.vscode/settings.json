@@ -1,3 +1,13 @@
 {
-  "eslint.workingDirectories": ["06", "07"]
+  "eslint.workingDirectories": [
+    "06",
+    "07"
+  ],
+  "workbench.statusBar.visible": false,
+  "window.zoomLevel": 5,
+  "presentation-mode.configBackup": {
+    "workbench.activityBar.visible": "undefined",
+    "workbench.statusBar.visible": false,
+    "window.zoomLevel": 5
+  }
 }

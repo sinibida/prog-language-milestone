@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 회원가입
+  form(action="/users", method="post")
+    fieldset
+      legend 정보 입력
+      label(for="name") 이름
+      input#name(type="text", name="name")
+      br
+      label(for="age") 나이
+      input#age(type="number", name="age", value="20") 
+      br
+      label(for="married") 결혼
+      input#married(type="checkbox", name="married") 
+      br
+      label(for="comment") 설명
+      input#comment(type="text", name="comment") 
+      br
+      input(type="submit", value="추가") 

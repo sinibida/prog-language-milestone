@@ -1,5 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 유저 목록
+  table.user-table
+    thead
+      tr
+        th 삭제
+        th 이름
+        th 나이
+        th 결혼 여부
+        th 설명
+    tbody
+      each user in users
+        tr
+          td
+            button.user-table__delete-button(data-user-id=user.id) X
+          td
+            a(href=`/user-view/${user.id}`)= user.name
+          td= user.age
+          td= user.married ? 'O' : 'X'
+          td= user.comment
+  script(src="javascripts/index.js")
