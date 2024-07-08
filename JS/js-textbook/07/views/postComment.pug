@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 방명록 작성
+  form#main-form(action="/comments", method="post")
+    fieldset
+      legend 정보 입력
+      label(for="commenter") 유저아이디
+      input#commenter(type="number", name="commenter")
+      br
+      label(for="comment") 내용
+      textarea#comment(type="text", name="comment")
+      br
+      input(type="submit", value="작성") 
+  script(src="javascripts/postComment.js")

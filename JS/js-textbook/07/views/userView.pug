@@ -15,4 +15,15 @@ block content
       td
         strong 설명
       td= user.comment
+  h2 작성한 방명록
+  table.comment-table
+    thead
+      tr
+        th 내용
+        th 작성일
+    tbody
+      each comment in comments
+        tr
+          td= comment.comment
+          td= comment.created_at.toDateString()
       

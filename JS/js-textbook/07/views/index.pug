@@ -5,6 +5,7 @@ block content
   table.user-table
     thead
       tr
+        th id
         th 삭제
         th 이름
         th 나이
@@ -13,6 +14,7 @@ block content
     tbody
       each user in users
         tr
+          td= user.id
           td
             button.user-table__delete-button(data-user-id=user.id) X
           td
@@ -20,4 +22,22 @@ block content
           td= user.age
           td= user.married ? 'O' : 'X'
           td= user.comment
+  h1 방명록
+  table.comment-table
+    thead
+      tr
+        th id
+        th 삭제
+        th 작성자
+        th 내용
+        th 작성일
+    tbody
+      each comment in comments
+        tr
+          td= comment.id
+          td
+            button.comment-table__delete-button(data-comment-id=comment.id) X
+          td= comment.user.name
+          td= comment.comment
+          td= comment.created_at.toDateString()
   script(src="javascripts/index.js")

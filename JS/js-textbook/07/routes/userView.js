@@ -1,6 +1,7 @@
 const express = require('express');
-const {User} = require('../models');
+const {User, Comment} = require('../models');
 const router = express.Router();
+const createError = require('http-errors')
 
 router.get("/:id", async function (req, res, next) {
   try {
@@ -10,11 +11,20 @@ router.get("/:id", async function (req, res, next) {
       },
     });
     if (user === null) {
-      throw Error("User Not Found");
+      next(createError(404, "User Not Found"));
     }
 
-    res.locals.title = user.name
-    res.locals.user = user
+    const comments = await Comment.findAll({
+      where: {
+        commenter: user.id
+      }
+    })
+    
+    res.locals = {
+      title: user.name,
+      user,
+      comments,
+    }
     res.render('userView');
   } catch (e) {
     console.error(e);

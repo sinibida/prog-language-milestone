@@ -192,10 +192,41 @@ xhr.send() // !!!
 
 ## 관계 설정
 
-**DO: 7.6.3**
+- 1:N
+- 1:1 (ex: 사용자 & 사용자정보)
+- N:M
 
+```js
+Foo.hasOne(Bar);
+Bar.belongsTo(Foo);
+```
+
++) https://sequelize.org/docs/v7/associations/has-many/#foreign-key-targets-sourcekey
+
+```js
+{
+  foreignKey: 'postId',
+  // The foreign key will reference the `id` attribute of the `Post` model
+  sourceKey: 'id',
+}
+```
+
+also: https://sequelize.org/docs/v7/querying/operators/
+- Operator(ex: `in`) in where
 
 # see also:
 
 - [TypeORM](https://typeorm.io/)
 - [Should I use ORM? (Reddit)](https://www.reddit.com/r/learnprogramming/comments/vbnu8k/should_i_use_an_orm/)
+- [fetch() method](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+---
+
+이 정도만 해보자...
+
+?:
+- XHR 모드는 옛날 방법같음. 요즘은 express & request들을 어떻게 만들까?
+- POST/DELETE 메서드 실행 후 redirection은 어떻게 처리할까?
+  - 서버에서? 클라이언트에서?
+- 
+

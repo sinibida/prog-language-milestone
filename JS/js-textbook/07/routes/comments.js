@@ -1,12 +1,12 @@
 var express = require("express");
-const { User } = require("../models");
+const { Comment, User } = require("../models");
 var router = express.Router();
 
-/* GET users listing. */
+/* GET comments listing. */
 router.get("/", async function (req, res, next) {
   try {
-    const users = await User.findAll();
-    res.json(users);
+    const comments = await Comment.findAll();
+    res.json(comments);
   } catch (e) {
     console.error(e);
     next(e);
@@ -15,12 +15,11 @@ router.get("/", async function (req, res, next) {
 
 router.post("/", async function (req, res, next) {
   try {
-    const { name, age, married, comment } = req.body;
-    const result = await User.create({
-      age: parseInt(age),
-      married: married === "on",
+    const { commenter, comment } = req.body;
+
+    const result = await Comment.create({
       comment,
-      name,
+      commenter
     });
     res.status(201).json(result);
   } catch (e) {
@@ -31,12 +30,12 @@ router.post("/", async function (req, res, next) {
 
 router.get("/:id", async function (req, res, next) {
   try {
-    const users = await User.findAll({
+    const comments = await Comment.findAll({
       where: {
         id: parseInt(req.params.id),
       },
     });
-    res.json(users);
+    res.json(comments);
   } catch (e) {
     console.error(e);
     next(e);
@@ -45,12 +44,12 @@ router.get("/:id", async function (req, res, next) {
 
 router.delete("/:id", async function (req, res, next) {
   try {
-    const users = await User.destroy({
+    const comments = await Comment.destroy({
       where: {
         id: parseInt(req.params.id),
       },
     });
-    res.redirect("/");
+    res.redirect(303, "/");
   } catch (e) {
     console.error(e);
     next(e);
